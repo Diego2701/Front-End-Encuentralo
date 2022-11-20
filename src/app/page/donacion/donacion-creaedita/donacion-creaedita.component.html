@@ -1,0 +1,40 @@
+<div style="  position: relative;
+left: 330px;" class="container">
+
+   <h1>Donación</h1>
+
+   <mat-form-field class="exapmle-full-widgth">
+    <mat-label>Id</mat-label>
+    <input matInput placeholder="Id" [(ngModel)]="donacion.id">
+   </mat-form-field>
+   <br>
+   <mat-form-field class="example-full-width">
+    <mat-label>Nombre </mat-label>
+    <input matInput required placeholder="Nombre" [(ngModel)]="donacion.nomDonar">
+   </mat-form-field>
+   <br>
+   <mat-form-field class="example-full-width">
+    <mat-label>Seleccione Producto</mat-label>
+    <mat-select [(value)]="idproductoSeleccionado" required>
+        <mat-option *ngFor="let p of listaproducto" [value]="p.id">
+            {{p.desProducto}}
+        </mat-option>
+    </mat-select>
+   </mat-form-field>
+   <br>
+   <mat-form-field class="example-full-width">
+    <mat-label>Cantidad</mat-label>
+    <input matInput required placeholder="Cantidad" [(ngModel)]="donacion.cantidad">
+   </mat-form-field>
+   <br>
+   <mat-form-field class="example-full-width">
+    <mat-label>Direccion</mat-label>
+    <input  matInput required placeholder="Direccion" [(ngModel)]="donacion.direccion">
+   </mat-form-field>
+   <br>
+<button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+<button mat-raised-button color="warn" routerLink="/donacion">Cancelar</button>
+<p>{{mensaje}}</p>
+
+</div>
+

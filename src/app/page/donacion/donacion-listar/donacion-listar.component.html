@@ -1,0 +1,67 @@
+<div class="container">
+    <div style=" text-align: center;">
+      <br>
+      <h1>Lista de Donaciones</h1>
+      <br>
+  <app-donacion-buscar style="  position: relative; Right: 575px;"></app-donacion-buscar>
+    </div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nomDonar}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="producto">
+        <th mat-header-cell *matHeaderCellDef> Producto </th>
+        <td mat-cell *matCellDef="let element"> {{element.producto.desProducto}} </td>
+    </ng-container>
+    <ng-container matColumnDef="cantidad">
+        <th mat-header-cell *matHeaderCellDef> Cantidad</th>
+        <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+    </ng-container>
+    <ng-container matColumnDef="direccion">
+        <th mat-header-cell *matHeaderCellDef> Dirección </th>
+        <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="accion1">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary"
+            [routerLink]="['edicion', element?.id]">Actualizar</button>
+    
+        </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="accion2">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element"> 
+          <button mat-raised-button color="warn" (click)="confirmar(element.id)">Eliminar</button>
+    
+        </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div  class="example-button-container">
+
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon"
+      routerLink="/donacion/nuevo" style="  position: relative;  top: 1px; left: 287px;">
+      <mat-icon>plus_one</mat-icon>
+    </button>
+    <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" style="  position: relative; left: 1550px;">
+      <mat-icon (click)="listar()">menu</mat-icon>
+    </button>
+  </div>

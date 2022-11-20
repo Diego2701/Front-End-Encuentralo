@@ -1,0 +1,40 @@
+
+<div style="  position: relative;
+left: 330px;" class="container">
+
+   <h1>Reporte</h1>
+
+   <mat-form-field class="exapmle-full-widgth">
+    <mat-label>Id</mat-label>
+    <input matInput placeholder="Id" [(ngModel)]="reporte.id">
+   </mat-form-field>
+   <br>
+   <mat-form-field class="example-full-width">
+    <mat-label>Descripción</mat-label>
+    <input matInput required placeholder="Descripcion del Producto" [(ngModel)]="reporte.desReporte">
+   </mat-form-field>
+   <br>
+   <mat-form-field class="example-full-width">
+    <mat-label>Seleccione Vendedor</mat-label>
+    <mat-select [(value)]="idVendedorSeleccionado" required>
+        <mat-option *ngFor="let v of listaVendedor" [value]="v.id">
+            {{v.nomVendedor}}
+        </mat-option>
+    </mat-select>
+   </mat-form-field>
+   <br>
+   <mat-form-field class="example-full-width">
+    <mat-label>Seleccione Consumidor</mat-label>
+    <mat-select [(value)]="idConsumidorSeleccionado" required>
+        <mat-option *ngFor="let c of listaConsumidor" [value]="c.id">
+            {{c.nomConsumidor}}
+        </mat-option>
+    </mat-select>
+   </mat-form-field>
+   <br>
+   
+<button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+<button mat-raised-button color="warn" routerLink="/reporte">Cancelar</button>
+<p>{{mensaje}}</p>
+
+</div>

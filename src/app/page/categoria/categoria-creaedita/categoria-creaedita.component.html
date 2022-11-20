@@ -1,0 +1,23 @@
+
+<div style="  position: relative;
+left: 330px;" class="container">
+
+   <h1>Categoria</h1>
+
+   <mat-form-field class="exapmle-full-widgth">
+    <mat-label>Id</mat-label>
+    <input matInput placeholder="Id" [(ngModel)]="categoria.id">
+   </mat-form-field>
+
+   <br>
+
+   <mat-form-field class="example-full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput required placeholder="name" [(ngModel)]="categoria.nomCategoria">
+   </mat-form-field>
+   <br>
+<button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+<button mat-raised-button color="warn" routerLink="/categoria">Cancelar</button>
+<p>{{mensaje}}</p>
+
+</div>

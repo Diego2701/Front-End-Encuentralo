@@ -1,0 +1,61 @@
+<br>
+<div style="  position: relative; left: 350px;" class="container">
+
+  <h1>Consumidor</h1>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Id</mat-label>
+    <input matInput placeholder="Id" [(ngModel)]="consumidor.id">
+
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput required placeholder="name" [(ngModel)]="consumidor.nomConsumidor">
+
+  </mat-form-field>
+
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>DNI </mat-label>
+    <input type="email" matInput required placeholder="dni" [(ngModel)]="consumidor.dniConsumidor">
+  </mat-form-field>
+
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Edad </mat-label>
+    <input type="email" matInput required placeholder="edad" [(ngModel)]="consumidor.edadConsumidor">
+  </mat-form-field>
+
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Celular </mat-label>
+    <input type="email" matInput required placeholder="cel" [(ngModel)]="consumidor.celConsumidor">
+  </mat-form-field>
+
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput required placeholder="email" [(ngModel)]="consumidor.emailConsumidor">
+  </mat-form-field>
+
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Username</mat-label>
+    <input type="email" matInput required placeholder="username" [(ngModel)]="consumidor.username">
+  </mat-form-field>
+
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput required placeholder="password" [(ngModel)]="consumidor.password">
+  </mat-form-field>
+
+  <br>
+  <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+  <button mat-raised-button color="warn" routerLink="/consumidor">Cancelar</button>
+  <p>{{mensaje}}</p>
+
+</div>

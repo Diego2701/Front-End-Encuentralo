@@ -1,0 +1,53 @@
+
+<div style="  position: relative;
+left: 330px;" class="container">
+
+   <h1>Producto</h1>
+
+   <mat-form-field class="exapmle-full-widgth">
+    <mat-label>Id</mat-label>
+    <input matInput placeholder="Id" [(ngModel)]="producto.id">
+   </mat-form-field>
+   <br>
+   <mat-form-field class="example-full-width">
+    <mat-label>Descripción</mat-label>
+    <input matInput required placeholder="Descripcion del Producto" [(ngModel)]="producto.desProducto">
+   </mat-form-field>
+   <br>
+   <mat-form-field class="example-full-width">
+    <mat-label>Marca</mat-label>
+    <input matInput required placeholder="Marca" [(ngModel)]="producto.marcaProducto">
+   </mat-form-field>
+   <br>
+   <mat-form-field class="example-full-width">
+    <mat-label>Seleccione Vendedor</mat-label>
+    <mat-select [(value)]="idVendedorSeleccionado" required>
+        <mat-option *ngFor="let v of listaVendedor" [value]="v.id">
+            {{v.nomVendedor}}
+        </mat-option>
+    </mat-select>
+   </mat-form-field>
+   <br>
+   <mat-form-field class="example-full-width">
+    <mat-label>Seleccione Categoria</mat-label>
+    <mat-select [(value)]="idCategoriaSeleccionado" required>
+        <mat-option *ngFor="let c of listaCategoria" [value]="c.id">
+            {{c.nomCategoria}}
+        </mat-option>
+    </mat-select>
+   </mat-form-field>
+   <br>
+   <mat-form-field class="example-full-width">
+    <mat-label>Seleccione Notificacion</mat-label>
+    <mat-select [(value)]="idNotifiSeleccionado" required>
+        <mat-option *ngFor="let n of listaNotifica" [value]="n.id">
+            {{n.fechaCaducidad}}
+        </mat-option>
+    </mat-select>
+   </mat-form-field>
+   <br>
+<button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+<button mat-raised-button color="warn" routerLink="/producto">Cancelar</button>
+<p>{{mensaje}}</p>
+
+</div>
